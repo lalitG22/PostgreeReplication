@@ -1,16 +1,16 @@
 PostgreSQL Replication - The Ultimate Guide
 Replication in PostgreSQL allows data to be copied from a primary server to one or more standby servers for high availability, backups, and performance optimization.
 
-Types of Replication
-Streaming Replication
-Description: Full database copy using WAL logs.
+Types of Replication in PostgreSQL
+Streaming Replication 📡
+Full Database Copy 🔁 using WAL logs
 
-Logical Replication
-Description: Only selected tables are copied.
+Logical Replication 🧠
+Only Selected Tables are Copied
 
 Method 1: Streaming Replication (Full Database Copy)
 Step 1: Configure Primary Server (Sender)
-Edit postgresql.conf
+Edit postgresql.conf Modify these settings:
 
 ini
 wal_level = replica
@@ -39,7 +39,7 @@ Restart PostgreSQL
 bash
 systemctl restart postgresql
 Step 2: Configure Standby Server (Receiver)
-Copy data from the primary server:
+Run this command to copy data from the primary server:
 
 bash
 PGPASSWORD='<password>' pg_basebackup -h <Primary-IP> -U replicator -D /var/lib/postgresql/15/main -P -R
@@ -82,7 +82,7 @@ systemctl restart postgresql
 🎉 Logical Replication is now active! 🚀
 
 Troubleshooting & Tips
-Issue	Solution
+Issue 🤔	Solution 💡
 Cannot connect to primary server	Check pg_hba.conf & firewall rules.
 Data not replicating	Ensure wal_level = replica and max_wal_senders is set correctly.
 Logical replication not working	Verify publication and subscription names match.
@@ -95,4 +95,5 @@ Final Summary
 
 ✅ Follow these steps carefully, and your PostgreSQL Replication will work smoothly! 🚀
 
-Feel free to tweak this further if needed! Let me know if there's anything else I can assist you with.
+Feel free to customize it further as per your needs! Let me know if you need any more help.
+
