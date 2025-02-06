@@ -201,5 +201,21 @@ PostgreSQL replication is essential for **high availability**, **load balancing*
 
 By following these steps, you can set up a **robust PostgreSQL replication environment** efficiently! 🚀
 
+## Additional Monitoring Queries
+View Replication Slots
+To monitor the replication slots on your PostgreSQL server, use the following query:
 
+ ```sh
+SELECT * FROM pg_replication_slots;
+  ```
+This query will display all replication slots, which are used for tracking the replication state and ensuring data consistency between primary and standby servers.
+
+View Active Replication Subscriptions
+To check the status of active replication subscriptions, you can use:
+ ```sh
+SELECT * FROM pg_stat_subscription;
+  ```
+This query will show information about all active subscriptions, such as the replication state, the number of changes being replicated, and any errors related to the subscriptions.
+
+With these additional monitoring queries, you can track the health and performance of your PostgreSQL replication setup effectively.
 
